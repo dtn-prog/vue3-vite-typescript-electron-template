@@ -1,0 +1,20 @@
+{
+    "appId": "com.boilerPlate.app",
+    "productName": "boilerPlate",
+    "copyright": "Copyright © 2025 boilerPlate",
+    "icon": "./desktopIcon.png",
+    "files": [
+        "dist-electron",
+        "dist-vue"
+    ],
+    "mac": {
+        "target": ["dmg"]
+    },
+    "win": {
+        "target": ["portable", "msi"]
+    },
+    "linux": {
+        "target": ["AppImage"],
+        "category": "Utility"
+    }
+}

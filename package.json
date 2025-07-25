@@ -13,7 +13,10 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
     "lint": "eslint . --fix",
-    "transpile:electron": "tsc -project src/electron/ts.config.json "
+    "transpile:electron": "tsc -project src/electron/ts.config.json ",
+    "dist:mac": "npm run transpile:electron && npm run build && electron-builder --mac --arm64",
+    "dist:win": "npm run transpile:electron && npm run build && electron-builder --win --x64",
+    "dist:linux": "npm run transpile:electron && npm run build && electron-builder --linux --x64"
   },
   "dependencies": {
     "pinia": "^3.0.3",
