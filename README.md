@@ -1,45 +1,90 @@
-# duli360
+# Vue 3 + Vite + TypeScript + Electron Template
 
-This template should help get you started developing with Vue 3 in Vite.
+This project is a modern boilerplate for building cross-platform desktop applications using:
+- **Vue 3** (frontend UI)
+- **Vite** (fast build tool)
+- **TypeScript** (type safety)
+- **Electron** (desktop app shell)
 
-## Recommended IDE Setup
+## Features
+- ⚡️ Instant hot-reload development with Vite
+- 🖥️ Electron integration for desktop apps
+- 📝 TypeScript support throughout
+- 📦 Easy packaging for Windows, macOS, and Linux
+- 🗂️ Pinia for state management
+- 🧪 Unit testing with Vitest
+- 🧹 Linting with ESLint
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Directory Structure
+```
+├── src/
+│   ├── electron/      # Electron main process code
+│   └── ui/            # Vue 3 frontend code
+│       ├── assets/    # Static assets
+│       ├── components/# Vue components
+│       ├── stores/    # Pinia stores
+│       └── main.ts    # Frontend entry
+├── dist-vue/          # Built frontend (after build)
+├── package.json       # Project scripts and dependencies
+├── vite.config.ts     # Vite configuration
+├── electron-builder.json # Electron packaging config
+```
 
-## Type Support for `.vue` Imports in TS
+## Getting Started
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
+### 1. Install dependencies
+```bash
 npm install
 ```
 
-### Compile and Hot-Reload for Development
-
-```sh
+### 2. Development
+Run both the Vite dev server and Electron in development mode:
+```bash
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+- The frontend runs on [http://localhost:5123](http://localhost:5123)
+- Electron will open a window loading the dev server
 
-```sh
+### 3. Build for Production
+Build the Vue frontend and transpile Electron code:
+```bash
 npm run build
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+### 4. Package Desktop App
+Build distributables for your OS:
+- **Windows:**
+  ```bash
+  npm run dist:win
+  ```
+- **macOS:**
+  ```bash
+  npm run dist:mac
+  ```
+- **Linux:**
+  ```bash
+  npm run dist:linux
+  ```
 
-```sh
-npm run test:unit
-```
+### 5. Lint & Test
+- Lint code:
+  ```bash
+  npm run lint
+  ```
+- Run unit tests:
+  ```bash
+  npm run test:unit
+  ```
 
-### Lint with [ESLint](https://eslint.org/)
+## Technologies Used
+- [Vue 3](https://vuejs.org/)
+- [Vite](https://vitejs.dev/)
+- [Electron](https://www.electronjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Pinia](https://pinia.vuejs.org/)
+- [Vitest](https://vitest.dev/)
+- [ESLint](https://eslint.org/)
 
-```sh
-npm run lint
-```
+## License
+[MIT](LICENSE)
