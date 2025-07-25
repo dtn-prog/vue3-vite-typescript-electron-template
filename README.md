@@ -46,14 +46,14 @@ npm run dev
 - The frontend runs on [http://localhost:5123](http://localhost:5123)
 - Electron will open a window loading the dev server
 
-### 3. Build for Production
-Build the Vue frontend and transpile Electron code:
+### 3. Build for Production (Frontend only)
+Build the Vue frontend and check TypeScript types:
 ```bash
 npm run build
 ```
 
-### 4. Package Desktop App
-Build distributables for your OS:
+### 4. Package Desktop App (Electron)
+To create a distributable desktop app, Electron code must be transpiled first, then the frontend is built, then packaging is done. Use the following commands for your OS:
 - **Windows:**
   ```bash
   npm run dist:win
@@ -66,6 +66,11 @@ Build distributables for your OS:
   ```bash
   npm run dist:linux
   ```
+
+These scripts will:
+1. Transpile Electron main process code (`npm run transpile:electron`)
+2. Build the frontend (`npm run build`)
+3. Package the app with Electron Builder
 
 ### 5. Lint & Test
 - Lint code:

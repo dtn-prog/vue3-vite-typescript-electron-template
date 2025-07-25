@@ -46,14 +46,14 @@ npm run dev
 - Frontend chạy tại [http://localhost:5123](http://localhost:5123)
 - Electron sẽ mở cửa sổ tải dev server
 
-### 3. Build cho sản xuất
-Build frontend Vue và biên dịch mã Electron:
+### 3. Build cho sản xuất (chỉ frontend)
+Build frontend Vue và kiểm tra kiểu TypeScript:
 ```bash
 npm run build
 ```
 
-### 4. Đóng gói ứng dụng desktop
-Tạo file cài đặt cho hệ điều hành của bạn:
+### 4. Đóng gói ứng dụng desktop (Electron)
+Để tạo file cài đặt desktop, mã Electron sẽ được biên dịch trước, sau đó build frontend, cuối cùng mới đóng gói. Sử dụng các lệnh sau cho hệ điều hành của bạn:
 - **Windows:**
   ```bash
   npm run dist:win
@@ -66,6 +66,11 @@ Tạo file cài đặt cho hệ điều hành của bạn:
   ```bash
   npm run dist:linux
   ```
+
+Các script này sẽ:
+1. Biên dịch mã nguồn Electron (`npm run transpile:electron`)
+2. Build frontend (`npm run build`)
+3. Đóng gói ứng dụng với Electron Builder
 
 ### 5. Kiểm tra code & test
 - Kiểm tra code:
