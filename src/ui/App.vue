@@ -3,5 +3,5 @@
 </script>
 
 <template>
-<h1>ádfsd</h1>
+<h1>Hello World asdfasdf</h1>
 </template>
