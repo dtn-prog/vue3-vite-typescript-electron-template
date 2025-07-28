@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import TourManager from './components/TourManager.vue'
 
 const activeTab = ref('tours')
 
@@ -47,6 +48,7 @@ const getTabTitle = () => {
 			<!-- Content Area -->
 			<div class="flex-grow-1 overflow-auto p-4">
 				<div v-if="activeTab === 'tours'">
+					<TourManager />
 				</div>
 				<div v-if="activeTab === 'settings'">
 				</div>
