@@ -21,11 +21,16 @@ const createMainWindow = () => {
 }
 
 app.on('ready', () => {
-  const userDataPath = app.getPath('userData');
-  const tourDataPath = path.join(userDataPath, 'tours');
+  const appDataPath = app.getPath('userData');
+  const tourDataPath = path.join(appDataPath, 'tours');
 
   if(!fs.existsSync(tourDataPath)) {
     fs.mkdirSync(tourDataPath, { recursive: true });
+  }
+
+  const tourJsPath = path.join(tourDataPath, 'tours.json');
+  if(!fs.existsSync(tourJsPath)) {
+    fs.writeFileSync(tourJsPath, '[]');
   }
 
   createMainWindow();
