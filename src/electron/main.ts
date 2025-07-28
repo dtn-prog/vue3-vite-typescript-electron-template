@@ -22,7 +22,7 @@ app.on('ready', () => {
     if (BrowserWindow.getAllWindows().length === 0) {
       createMainWindow();
     }
-  })
+  });
 })
 
 app.on('window-all-closed', () => {
