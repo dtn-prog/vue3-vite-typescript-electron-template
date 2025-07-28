@@ -2,6 +2,7 @@ import { app, BrowserWindow } from 'electron'
 import path from 'path'
 import { isDev } from './util.js'
 import { getPreloadPath } from './pathResolver.js'
+import fs from 'fs'
 
 const createMainWindow = () => {
   const mainWindow = new BrowserWindow({
@@ -20,6 +21,13 @@ const createMainWindow = () => {
 }
 
 app.on('ready', () => {
+  const userDataPath = app.getPath('userData');
+  const tourDataPath = path.join(userDataPath, 'tours');
+
+  if(!fs.existsSync(tourDataPath)) {
+    fs.mkdirSync(tourDataPath, { recursive: true });
+  }
+
   createMainWindow();
 
   app.on('activate', () => {

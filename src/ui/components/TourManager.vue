@@ -1,8 +1,7 @@
 <template>
   <div class="container mt-4">
     <div class="d-flex justify-content-between align-items-center mb-3">
-      <h3 class="mb-0">Tour Manager</h3>
-      <button class="btn btn-primary">Add Tour</button>
+      <button class="btn btn-primary" @click="addTour">Add Tour</button>
     </div>
 
     <div class="row">
@@ -30,6 +29,11 @@ const tours = ref<Tour[]>([
   { id: 2, name: 'Nature Escape' },
   { id: 3, name: 'Historic Landmarks' }
 ])
+
+const addTour = () => {
+  console.log('addTour');
+  alert('addTour');
+}
 </script>
 
 <style scoped>
