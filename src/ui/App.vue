@@ -32,7 +32,7 @@ console.log(testStr);
 			<nav class="nav flex-column p-2 flex-grow-1 text-start">
 				<button @click="activeTab = 'tours'" :class="['nav-link', activeTab === 'tours' ? 'active' : '']"
 					class="text-start" type="button">
-					<span class="me-2">📁</span> Tours
+					<span class="me-2">📁</span> Tours {{ testStr }}
 				</button>
 				<button @click="activeTab = 'settings'" :class="['nav-link', activeTab === 'settings' ? 'active' : '']"
 					class="text-start" type="button">
