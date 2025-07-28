@@ -13,6 +13,9 @@ const getTabTitle = () => {
 	}
 	return titles[activeTab.value] || 'Virtual Tour Creator'
 }
+// @ts-expect-error - electron is not typed
+const testStr = window.electron.testFunction();
+console.log(testStr);
 
 
 </script>

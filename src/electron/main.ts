@@ -1,9 +1,13 @@
 import { app, BrowserWindow } from 'electron'
 import path from 'path'
 import { isDev } from './util.js'
+import { getPreloadPath } from './pathResolver.js'
 
 const createMainWindow = () => {
   const mainWindow = new BrowserWindow({
+    webPreferences: {
+      preload: getPreloadPath(),
+    },
   });
 
   if (isDev()) {
